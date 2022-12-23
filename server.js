@@ -16,7 +16,7 @@ import Subscription from "./backend/resolvers/Subscription.js";
 import mongo from "./backend/mongo.js";
 import apiRoute from "./backend/route/api.js";
 
-import wakeUpDyno from "./backend/route/wakeUpDyno.js"
+// import wakeUpDyno from "./backend/route/wakeUpDyno.js"
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const port = process.env.PORT || 80;
@@ -53,8 +53,8 @@ server.installSubscriptionHandlers(httpServer);
 mongo.connect();
 
 httpServer.listen(port, () => {
-  const DYNO_URL = "https://janices-sudoku.herokuapp.com"
-  wakeUpDyno(DYNO_URL)
+  // const DYNO_URL = "https://janices-sudoku.herokuapp.com"
+  // wakeUpDyno(DYNO_URL)
   console.log(`🚀 Server Ready at ${port}! 🚀`);
   console.log(`Graphql Port at ${port}${server.subscriptionsPath}`);
 });
